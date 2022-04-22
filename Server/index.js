@@ -11,8 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/users", route);
 
-const url =
-  "mongodb+srv://admin:admin123@cluster0.cepfa.mongodb.net/Merntutorial?retryWrites=true&w=majority";
+const url =process.env.MONGODB_URL;
 const PORT = "8000";
 
 mongoose.connect(url).then(() => {
